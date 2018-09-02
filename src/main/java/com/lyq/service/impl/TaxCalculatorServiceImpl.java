@@ -51,7 +51,7 @@ public class TaxCalculatorServiceImpl implements TaxCalculatorService {
         double money = income - accumulation - medical - socialSecurity - crossClaim;
         double tax = TaxUtil.getTax(money);
         result.setTax(tax);
-        result.setAfterTax(money - tax);
+        result.setAfterTax(money - tax + crossClaim);
         return result;
     }
 
